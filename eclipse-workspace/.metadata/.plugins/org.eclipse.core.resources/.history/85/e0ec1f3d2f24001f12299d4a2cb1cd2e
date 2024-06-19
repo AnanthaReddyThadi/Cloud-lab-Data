@@ -1,0 +1,60 @@
+package RestAssuredExample;
+
+import io.cucumber.core.internal.com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown=true)
+public class Users {
+	public int id;
+	public String name,usernane,email;
+	
+	public void User() {}
+	
+	public void User(int id, String name, String username,String email)
+	{
+		this.id=id;
+		this.name=name;
+		this.usernane=username;
+		this.email=email;
+	}
+	
+	//Getters and Setters
+	public int getId()
+	{
+		return id;
+	}
+	public void setId(int id)
+	{
+		this.id=id;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	public void setName(String name)
+	{
+		this.name=name;
+	}
+	
+	public String getuserName()
+	{
+		return usernane;
+	}
+	public void setuserName(String username)
+	{
+		this.usernane=username;
+	}
+	
+	
+	public String getEmail()
+	{
+		return email;
+	}
+	public void setEmail(String email)
+	{
+		this.email=email;
+	}
+ 
+	
+
+}

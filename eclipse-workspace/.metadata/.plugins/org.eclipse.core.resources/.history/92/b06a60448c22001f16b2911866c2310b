@@ -1,0 +1,83 @@
+package stepDef;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.By;
+
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class HRMsteps {
+	WebDriver driver;
+	
+	@Given("User is on HRMLgin page")
+	public void user_is_on_hrm_lgin_page() {
+	    // Write code here that turns the phrase above into concrete actions
+		
+		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+//	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("User enters username as  {string} and {string}")
+	public void user_enters_username_as_and(String string, String string2) {
+	    // Write code here that turns the phrase above into concrete actions
+		 driver.findElement(By.name("username")).sendKeys("Admin");
+		 driver.findElement(By.name("password")).sendKeys("admin123");
+		 //driver.findElement(By.xpath("driver.findElement(By.cssSelector(\"Button[type='submit']\"));"));
+		 //https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+		 driver.findElement(By.cssSelector("Button[type='submit']")).click();	
+		 //driver.close();
+//	    throw new io.cucumber.java.PendingException();
+	}
+	@Then("User Should be able to login successful on home page")
+	public void user_should_be_able_to_login_successful_on_home_page() {
+	    // Write code here that turns the phrase above into concrete actions
+//	    throw new io.cucumber.java.PendingException();
+		System.out.println("Logged in successfully");
+		
+		
+		
+	}
+	@Then("close the HRM Home Page")
+	public void close_the_hrm_home_page() throws InterruptedException {
+	    // Write code here that turns the phrase above into concrete actions
+//	    throw new io.cucumber.java.PendingException();
+		 Thread.sleep(2000);
+
+		    driver.close();
+
+		    System.out.println("HRM Homepage close");
+
+		
+	}
+		
+	/**
+	 * @param string
+	 */
+//	@When("{string} click on log out button")
+//	public void click_on_log_out_button(String string) {
+//		WebElement dropdown = driver.findElement(By.className("oxd-icon bi-caret-down-fill oxd-userdropdown-icon"));
+//		Select select = new Select(dropdown);
+//		select.selectByVisibleText("Logout");
+//	    // Write code here that turns the phrase above into concrete actions
+//	    //throw new io.cucumber.java.PendingException();
+//	}
+//
+//	@Then("{string} Should be able to logout successfully")
+//	public void should_be_able_to_logout_successfully(String string) {
+//		System.out.println("Logged out successfully");
+//	    // Write code here that turns the phrase above into concrete actions
+//	    //throw new io.cucumber.java.PendingException();
+//	}
+	
+
+}

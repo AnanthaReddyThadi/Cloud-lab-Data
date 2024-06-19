@@ -1,0 +1,24 @@
+package RestAssuredExample;
+iimport org.junit.Test;
+import static io.restassured.RestAssured.given;
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+
+
+public class JsonPayTest 
+{
+	@Test
+	public void getUserById()
+	{
+		RestAssured.baseURI="https://jsonplaceholder.typicode.com";
+		//User user=given().get("users/1").then().statusCode(200).extract().as(User.class);
+		User user = given().contentType(ContentType.JSON).get("users/2").then().statusCode(200).extract().as(User.class);
+		System.out.println(user.getEmail());
+		/*
+		 * assertEquals(1, user.getId());//validation assertEquals("Leanne Graham",
+		 * user.getName()); assertEquals("Sincere@april.biz", user.getEmail());
+		*/
+	}
+}
+

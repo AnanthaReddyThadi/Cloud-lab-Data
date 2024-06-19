@@ -1,0 +1,11 @@
+Feature: Login to HRM Application
+
+
+Scenario Outline: Successful Login with Valid Credentials
+     Given User is on HRMLgin page
+	 When  User enters username as  "<username>" and "<password>"
+	 Then  User Should be able to login successful on home page
+	 
+Examples:
+    | username   | password |
+    | Admin      | admin123 |

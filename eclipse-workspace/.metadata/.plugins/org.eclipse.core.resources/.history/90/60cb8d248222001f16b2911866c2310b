@@ -1,0 +1,46 @@
+package stepDef;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
+
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class HRMsteps {
+	WebDriver driver;
+	
+	@Given("User is on HRMLgin page")
+	public void user_is_on_hrm_lgin_page() {
+	    // Write code here that turns the phrase above into concrete actions
+		
+		driver = new ChromeDriver();
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+//	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("User enters username as  {string} and {string}")
+	public void user_enters_username_as_and(String string, String string2) {
+	    // Write code here that turns the phrase above into concrete actions
+		 driver.findElement(By.name("username")).sendKeys("Admin");
+		 driver.findElement(By.name("password")).sendKeys("admin123");
+		 //driver.findElement(By.xpath("driver.findElement(By.cssSelector(\"Button[type='submit']\"));"));
+		 //https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+		 driver.findElement(By.cssSelector("Button[type='submit']"));
+		 
+		 
+//	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("User Should be able to login successfully and home page")
+	public void user_should_be_able_to_login_successfully_and_home_page() {
+	    // Write code here that turns the phrase above into concrete actions
+//	    throw new io.cucumber.java.PendingException();
+		System.out.println("Logged in successfully");
+		
+	}
+
+}

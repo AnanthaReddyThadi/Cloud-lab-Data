@@ -1,0 +1,24 @@
+package database;
+
+
+import java.sql.SQLExceptio;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sq.DriverManager;
+
+public class MySqlDemo {
+
+	public static void main(String[] args)  throws SQLException{
+		// TODO Auto-generated method stub
+
+		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/databasename","root","rps@123");
+		Statement stmt=con.createStatement();
+		
+		String s="select * from Personss;";
+		stmt.excecute(s);
+		
+		System.out.println("Executed Successfully");
+	}
+	
+
+}
